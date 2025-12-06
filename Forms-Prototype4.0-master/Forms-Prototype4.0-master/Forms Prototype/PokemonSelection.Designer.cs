@@ -33,6 +33,9 @@
             SearchButton = new Button();
             lb_Pokemon = new ListBox();
             Select = new Button();
+            label2 = new Label();
+            lb_SelectedPokemon = new ListBox();
+            TeamCountLabel = new Label();
             SuspendLayout();
             // 
             // label1
@@ -79,12 +82,41 @@
             Select.Text = "Select";
             Select.UseVisualStyleBackColor = true;
             Select.Click += Select_Click;
-            // 
+            //
+            // label2
+            //
+            label2.AutoSize = true;
+            label2.Location = new Point(552, 184);
+            label2.Name = "label2";
+            label2.Size = new Size(79, 15);
+            label2.TabIndex = 5;
+            label2.Text = "Selected Team";
+            //
+            // lb_SelectedPokemon
+            //
+            lb_SelectedPokemon.FormattingEnabled = true;
+            lb_SelectedPokemon.Location = new Point(511, 202);
+            lb_SelectedPokemon.Name = "lb_SelectedPokemon";
+            lb_SelectedPokemon.Size = new Size(205, 94);
+            lb_SelectedPokemon.TabIndex = 6;
+            //
+            // TeamCountLabel
+            //
+            TeamCountLabel.AutoSize = true;
+            TeamCountLabel.Location = new Point(552, 299);
+            TeamCountLabel.Name = "TeamCountLabel";
+            TeamCountLabel.Size = new Size(85, 15);
+            TeamCountLabel.TabIndex = 7;
+            TeamCountLabel.Text = "Team Size: 0/6";
+            //
             // PokemonSelection
-            // 
+            //
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(TeamCountLabel);
+            Controls.Add(lb_SelectedPokemon);
+            Controls.Add(label2);
             Controls.Add(Select);
             Controls.Add(lb_Pokemon);
             Controls.Add(SearchButton);
@@ -104,5 +136,8 @@
         private Button SearchButton;
         private ListBox lb_Pokemon;
         private Button Select;
+        private Label label2;
+        private ListBox lb_SelectedPokemon;
+        private Label TeamCountLabel;
     }
 }
