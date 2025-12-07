@@ -82,35 +82,36 @@
             Select.Text = "Select";
             Select.UseVisualStyleBackColor = true;
             Select.Click += Select_Click;
-            //
+            // 
             // label2
-            //
+            // 
             label2.AutoSize = true;
             label2.Location = new Point(552, 184);
             label2.Name = "label2";
-            label2.Size = new Size(79, 15);
+            label2.Size = new Size(83, 15);
             label2.TabIndex = 5;
             label2.Text = "Selected Team";
-            //
+            // 
             // lb_SelectedPokemon
-            //
+            // 
             lb_SelectedPokemon.FormattingEnabled = true;
             lb_SelectedPokemon.Location = new Point(511, 202);
             lb_SelectedPokemon.Name = "lb_SelectedPokemon";
             lb_SelectedPokemon.Size = new Size(205, 94);
             lb_SelectedPokemon.TabIndex = 6;
-            //
+            // 
             // TeamCountLabel
-            //
+            // 
             TeamCountLabel.AutoSize = true;
             TeamCountLabel.Location = new Point(552, 299);
             TeamCountLabel.Name = "TeamCountLabel";
-            TeamCountLabel.Size = new Size(85, 15);
+            TeamCountLabel.Size = new Size(82, 15);
             TeamCountLabel.TabIndex = 7;
             TeamCountLabel.Text = "Team Size: 0/6";
-            //
+            TeamCountLabel.Click += TeamCountLabel_Click;
+            // 
             // PokemonSelection
-            //
+            // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);

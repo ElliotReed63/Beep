@@ -81,5 +81,10 @@ namespace Forms_Prototype
         {
 
         }
+
+        private void TeamCountLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

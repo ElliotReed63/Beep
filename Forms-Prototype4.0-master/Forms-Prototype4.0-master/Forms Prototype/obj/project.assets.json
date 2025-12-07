@@ -1554,11 +1554,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\reedy\\Downloads\\Forms-Prototype4.0-master\\Forms-Prototype4.0-master\\Forms Prototype\\Forms Prototype.csproj",
+      "projectUniqueName": "C:\\Users\\reedy\\source\\repos\\ElliotReed63\\Beep\\Forms-Prototype4.0-master\\Forms-Prototype4.0-master\\Forms Prototype\\Forms Prototype.csproj",
       "projectName": "Forms Prototype",
-      "projectPath": "C:\\Users\\reedy\\Downloads\\Forms-Prototype4.0-master\\Forms-Prototype4.0-master\\Forms Prototype\\Forms Prototype.csproj",
+      "projectPath": "C:\\Users\\reedy\\source\\repos\\ElliotReed63\\Beep\\Forms-Prototype4.0-master\\Forms-Prototype4.0-master\\Forms Prototype\\Forms Prototype.csproj",
       "packagesPath": "C:\\Users\\reedy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\reedy\\Downloads\\Forms-Prototype4.0-master\\Forms-Prototype4.0-master\\Forms Prototype\\obj\\",
+      "outputPath": "C:\\Users\\reedy\\source\\repos\\ElliotReed63\\Beep\\Forms-Prototype4.0-master\\Forms-Prototype4.0-master\\Forms Prototype\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
