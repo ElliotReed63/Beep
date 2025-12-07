@@ -33,35 +33,24 @@ namespace Forms_Prototype
 
         private void button1_Click(object sender, EventArgs e)
         {
-            LoadBackground();
+            ApplyBackground(1);
         }
-        private void LoadBackground()
+        private void ApplyBackground(int imageId)
         {
-            int ImageID = 1;
             PokemonDatabase database = new PokemonDatabase();
-            (Image img, byte[] beep) = database.SelectBackground(ImageID);
+            (Image img, byte[] beep) = database.SelectBackground(imageId);
 
-            this.BackgroundImage = img;
-            this.BackgroundImageLayout = ImageLayout.Stretch;
+            BaseGUI.SetSharedBackground(img, ImageLayout.Stretch);
+            ApplySharedBackground();
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            int ImageID = 2;
-            PokemonDatabase database = new PokemonDatabase();
-            (Image img, byte[] beep) = database.SelectBackground(ImageID);
-
-            this.BackgroundImage = img;
-            this.BackgroundImageLayout = ImageLayout.Stretch;
+            ApplyBackground(2);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            int ImageID = 2;
-            PokemonDatabase database = new PokemonDatabase();
-            (Image img, byte[] beep) = database.SelectBackground(ImageID);
-
-            this.BackgroundImage = img;
-            this.BackgroundImageLayout = ImageLayout.Stretch;
+            ApplyBackground(2);
         }
 
         private void button3_Click(object sender, EventArgs e)
