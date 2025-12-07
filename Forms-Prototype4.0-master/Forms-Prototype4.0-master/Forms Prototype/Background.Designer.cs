@@ -34,33 +34,30 @@
             SuspendLayout();
             // 
             // button1
-            // 
+            //
             button1.Location = new Point(131, 141);
             button1.Name = "button1";
             button1.Size = new Size(140, 97);
             button1.TabIndex = 0;
             button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
-            // 
+            //
             // button2
-            // 
+            //
             button2.Location = new Point(436, 92);
             button2.Name = "button2";
             button2.Size = new Size(86, 34);
             button2.TabIndex = 1;
             button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
-            // 
+            //
             // button3
-            // 
+            //
             button3.Location = new Point(436, 193);
             button3.Name = "button3";
             button3.Size = new Size(86, 64);
             button3.TabIndex = 2;
             button3.Text = "button3";
-            button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
             // Background
