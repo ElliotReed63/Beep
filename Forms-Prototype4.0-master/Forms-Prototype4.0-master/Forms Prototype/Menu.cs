@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Forms_Prototype
 {
-    public partial class Menu : Form
+    public partial class Menu : BaseGUI
     {
         public Menu()
         {

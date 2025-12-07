@@ -99,6 +99,7 @@
             lb_SelectedPokemon.Name = "lb_SelectedPokemon";
             lb_SelectedPokemon.Size = new Size(205, 94);
             lb_SelectedPokemon.TabIndex = 6;
+            lb_SelectedPokemon.SelectedIndexChanged += lb_SelectedPokemon_SelectedIndexChanged;
             // 
             // TeamCountLabel
             // 
