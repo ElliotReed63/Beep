@@ -13,7 +13,7 @@ namespace Forms_Prototype
     public partial class BaseGUI : Form
     {
         private static Image _sharedBackgroundImage;
-        private static ImageLayout _sharedBackgroundLayout = ImageLayout.Stretch;
+        private static ImageLayout sharedBackgroundLayout = ImageLayout.Stretch;
 
         public BaseGUI()
         {
@@ -26,14 +26,19 @@ namespace Forms_Prototype
             if (_sharedBackgroundImage != null)
             {
                 BackgroundImage = _sharedBackgroundImage;
-                BackgroundImageLayout = _sharedBackgroundLayout;
+                BackgroundImageLayout = sharedBackgroundLayout;
             }
         }
 
         public static void SetSharedBackground(Image backgroundImage, ImageLayout imageLayout)
         {
             _sharedBackgroundImage = backgroundImage;
-            _sharedBackgroundLayout = imageLayout;
+            sharedBackgroundLayout = imageLayout;
+        }
+
+        private void BaseGUI_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
