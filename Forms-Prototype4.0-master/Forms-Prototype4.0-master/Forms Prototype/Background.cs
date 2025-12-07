@@ -44,17 +44,9 @@ namespace Forms_Prototype
             BaseGUI.SetSharedBackground(img, ImageLayout.Stretch);
             ApplySharedBackground();
 
-            if (img != null)
-            {
-                ApplyButtonImage(button1, img);
-                ApplyButtonImage(button2, img);
-                ApplyButtonImage(button3, img);
-            }
+
         }
-        private static void ApplyButtonImage(Button button, Image background)
-        {
-            button.BackgroundImage = background;
-        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             ApplyBackground(2);
@@ -90,20 +82,6 @@ namespace Forms_Prototype
             button.UseVisualStyleBackColor = false;
             button.ForeColor = Color.White;
             button.Paint += DrawButtonBackgroundFromForm;
-        }
-
-        private static void RefreshTransparentButtons()
-        {
-            // Force a repaint so the pseudo-transparent effect uses the latest background.
-            foreach (Form openForm in Application.OpenForms)
-            {
-                if (openForm is Background backgroundForm)
-                {
-                    backgroundForm.button1?.Invalidate();
-                    backgroundForm.button2?.Invalidate();
-                    backgroundForm.button3?.Invalidate();
-                }
-            }
         }
 
         private static void DrawButtonBackgroundFromForm(object? sender, PaintEventArgs e)
@@ -151,5 +129,6 @@ namespace Forms_Prototype
                 button.ForeColor,
                 TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter | TextFormatFlags.EndEllipsis);
         }
+
     }
 }

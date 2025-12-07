@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             button1 = new Button();
             button2 = new Button();
             Backgrounds = new Button();
@@ -66,6 +67,8 @@
             // 
             // Leaderboard
             // 
+            Leaderboard.BackgroundImage = (Image)resources.GetObject("Leaderboard.BackgroundImage");
+            Leaderboard.BackgroundImageLayout = ImageLayout.Stretch;
             Leaderboard.Location = new Point(686, 15);
             Leaderboard.Name = "Leaderboard";
             Leaderboard.Size = new Size(102, 62);

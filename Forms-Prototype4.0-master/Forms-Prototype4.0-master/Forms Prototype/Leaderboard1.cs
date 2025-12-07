@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Forms_Prototype
 {
-    public partial class Leaderboard1 : Form
+    public partial class Leaderboard1 : BaseGUI
     {
         public Leaderboard1()
         {

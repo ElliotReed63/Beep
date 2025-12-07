@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Forms_Prototype
 {
-    public partial class Leaderboard : Form
+    public partial class Leaderboard : BaseGUI
     {
         private List<User> users;
         private List<UserStats> userstats;
