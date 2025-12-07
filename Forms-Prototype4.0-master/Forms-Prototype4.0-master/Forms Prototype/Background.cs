@@ -42,6 +42,17 @@ namespace Forms_Prototype
 
             BaseGUI.SetSharedBackground(img, ImageLayout.Stretch);
             ApplySharedBackground();
+
+            if (img != null)
+            {
+                ApplyButtonImage(button1, img);
+                ApplyButtonImage(button2, img);
+                ApplyButtonImage(button3, img);
+            }
+        }
+        private static void ApplyButtonImage(Button button, Image background)
+        {
+            button.BackgroundImage = background;
         }
         private void button2_Click(object sender, EventArgs e)
         {
