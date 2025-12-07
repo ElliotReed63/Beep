@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -121,6 +122,21 @@ namespace Forms_Prototype
                 e.Graphics.FillRectangle(brush, destRect);
             }
 
+            if (button.BackgroundImage != null)
+            {
+                using ImageAttributes attributes = CreateWhiteToTransparentRemap();
+                Rectangle imageDestRect = GetImageDestinationRectangle(button, destRect);
+                e.Graphics.DrawImage(
+                    button.BackgroundImage,
+                    imageDestRect,
+                    0,
+                    0,
+                    button.BackgroundImage.Width,
+                    button.BackgroundImage.Height,
+                    GraphicsUnit.Pixel,
+                    attributes);
+            }
+
             TextRenderer.DrawText(
                 e.Graphics,
                 button.Text,
@@ -128,6 +144,33 @@ namespace Forms_Prototype
                 destRect,
                 button.ForeColor,
                 TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter | TextFormatFlags.EndEllipsis);
+        }
+
+        private static Rectangle GetImageDestinationRectangle(Button button, Rectangle destRect)
+        {
+            return button.BackgroundImageLayout switch
+            {
+                ImageLayout.Zoom or ImageLayout.Stretch => destRect,
+                ImageLayout.Center => new Rectangle(
+                    destRect.Left + (destRect.Width - button.BackgroundImage!.Width) / 2,
+                    destRect.Top + (destRect.Height - button.BackgroundImage.Height) / 2,
+                    button.BackgroundImage.Width,
+                    button.BackgroundImage.Height),
+                _ => destRect
+            };
+        }
+
+        private static ImageAttributes CreateWhiteToTransparentRemap()
+        {
+            ColorMap whiteToTransparent = new ColorMap
+            {
+                OldColor = Color.White,
+                NewColor = Color.Transparent
+            };
+
+            ImageAttributes attributes = new ImageAttributes();
+            attributes.SetRemapTable(new[] { whiteToTransparent }, ColorAdjustType.Bitmap);
+            return attributes;
         }
 
     }
