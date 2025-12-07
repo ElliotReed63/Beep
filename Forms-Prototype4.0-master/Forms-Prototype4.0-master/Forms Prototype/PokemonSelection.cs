@@ -86,5 +86,10 @@ namespace Forms_Prototype
         {
 
         }
+
+        private void lb_SelectedPokemon_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

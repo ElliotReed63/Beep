@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Forms_Prototype
 {
-    public partial class Background : Form
+    public partial class Background : BaseGUI
     {
         public Background()
         {
@@ -62,6 +62,14 @@ namespace Forms_Prototype
 
             this.BackgroundImage = img;
             this.BackgroundImageLayout = ImageLayout.Stretch;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Menu menu = new Menu();
+            menu.ShowDialog();
+            this.Close();
         }
     }
 }
