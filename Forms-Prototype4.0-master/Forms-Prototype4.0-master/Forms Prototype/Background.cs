@@ -122,20 +122,7 @@ namespace Forms_Prototype
                 e.Graphics.FillRectangle(brush, destRect);
             }
 
-            if (button.BackgroundImage != null)
-            {
-                using ImageAttributes attributes = CreateWhiteToTransparentRemap();
-                Rectangle imageDestRect = GetImageDestinationRectangle(button, destRect);
-                e.Graphics.DrawImage(
-                    button.BackgroundImage,
-                    imageDestRect,
-                    0,
-                    0,
-                    button.BackgroundImage.Width,
-                    button.BackgroundImage.Height,
-                    GraphicsUnit.Pixel,
-                    attributes);
-            }
+
 
             TextRenderer.DrawText(
                 e.Graphics,
