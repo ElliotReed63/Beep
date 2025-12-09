@@ -28,23 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            listBox1 = new ListBox();
+            TeamListBox = new ListBox();
             SuspendLayout();
-            // 
-            // listBox1
-            // 
-            listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(269, 100);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(257, 214);
-            listBox1.TabIndex = 0;
-            // 
+            //
+            // TeamListBox
+            //
+            TeamListBox.FormattingEnabled = true;
+            TeamListBox.Location = new Point(269, 100);
+            TeamListBox.Name = "TeamListBox";
+            TeamListBox.Size = new Size(257, 214);
+            TeamListBox.TabIndex = 0;
+            //
             // Battle
-            // 
+            //
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(listBox1);
+            Controls.Add(TeamListBox);
             Name = "Battle";
             Text = "Battle";
             ResumeLayout(false);
@@ -52,6 +52,6 @@
 
         #endregion
 
-        private ListBox listBox1;
+        private ListBox TeamListBox;
     }
 }

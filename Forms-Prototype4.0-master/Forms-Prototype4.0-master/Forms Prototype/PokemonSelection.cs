@@ -14,6 +14,10 @@ namespace Forms_Prototype
     {
         private List<Pokemon> pokemons;
         private List<Pokemon> selectedTeam = new List<Pokemon>();
+
+        // Expose a copy of the team so other forms cannot mutate
+        // the underlying list accidentally.
+        public List<Pokemon> SelectedTeam => new List<Pokemon>(selectedTeam);
         public PokemonSelection()
         {
             InitializeComponent();
@@ -50,7 +54,7 @@ namespace Forms_Prototype
             }
 
             selectedTeam.Add(chosenPokemon);
-            lb_SelectedPokemon.Items.Add(chosenPokemon.getName() + " " + chosenPokemon.getType() + " " + chosenPokemon.getHealth());
+            lb_SelectedPokemon.Items.Add(FormatPokemonDisplay(chosenPokemon));
             TeamCountLabel.Text = "Team Size: " + selectedTeam.Count + "/6";
             if (selectedTeam.Count == 6)
             {
@@ -68,7 +72,7 @@ namespace Forms_Prototype
             {
                 foreach (Pokemon p in pokemons)
                 {
-                    lb_Pokemon.Items.Add(p.getName() + " " + p.getType() + " " + p.getHealth());
+                    lb_Pokemon.Items.Add(FormatPokemonDisplay(p));
                 }
             }
             else
@@ -90,6 +94,34 @@ namespace Forms_Prototype
         private void lb_SelectedPokemon_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        /// <summary>
+        /// Opens the battle screen with the team collected here. This same
+        /// pattern can be reused to pass any other data between forms (for
+        /// example, user information or battle settings) by adding extra
+        /// parameters to the <see cref="Battle"/> constructor.
+        /// </summary>
+        private void StartBattle_Click(object sender, EventArgs e)
+        {
+            if (selectedTeam.Count == 0)
+            {
+                MessageBox.Show("Select at least one Pokemon before starting a battle.");
+                return;
+            }
+
+            // Pass a copy so the battle form cannot modify the selection state.
+            Battle battle = new Battle(new List<Pokemon>(selectedTeam));
+            battle.ShowDialog();
+        }
+
+        /// <summary>
+        /// Formats Pokemon data for list displays so both forms show the same
+        /// text. Adjust this helper to change the presentation everywhere.
+        /// </summary>
+        private static string FormatPokemonDisplay(Pokemon pokemon)
+        {
+            return $"{pokemon.getName()} {pokemon.getType()} {pokemon.getHealth()}";
         }
     }
 }
