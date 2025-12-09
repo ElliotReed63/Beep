@@ -36,6 +36,7 @@
             label2 = new Label();
             lb_SelectedPokemon = new ListBox();
             TeamCountLabel = new Label();
+            StartBattle = new Button();
             SuspendLayout();
             // 
             // label1
@@ -110,12 +111,23 @@
             TeamCountLabel.TabIndex = 7;
             TeamCountLabel.Text = "Team Size: 0/6";
             TeamCountLabel.Click += TeamCountLabel_Click;
-            // 
+            //
+            // StartBattle
+            //
+            StartBattle.Location = new Point(319, 325);
+            StartBattle.Name = "StartBattle";
+            StartBattle.Size = new Size(149, 31);
+            StartBattle.TabIndex = 8;
+            StartBattle.Text = "Start Battle";
+            StartBattle.UseVisualStyleBackColor = true;
+            StartBattle.Click += StartBattle_Click;
+            //
             // PokemonSelection
-            // 
+            //
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(StartBattle);
             Controls.Add(TeamCountLabel);
             Controls.Add(lb_SelectedPokemon);
             Controls.Add(label2);
@@ -141,5 +153,6 @@
         private Label label2;
         private ListBox lb_SelectedPokemon;
         private Label TeamCountLabel;
+        private Button StartBattle;
     }
 }
